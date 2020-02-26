@@ -32,6 +32,7 @@
 #include "CoreMinimal.h"
 #include "Modules/ModuleManager.h"
 #include "DDBase.h"
+#include "FMODEvent.h"
 
 class FFsoundModule : public FDDBaseModule
 {
@@ -39,5 +40,9 @@ public:
 
 	/** IModuleInterface implementation */
 	virtual void StartupModule() override;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FMOD")
+	UFMODEvent* TestEvent;
+
 	virtual void ShutdownModule() override;
 };

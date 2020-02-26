@@ -34,7 +34,9 @@ public class Fsound : ModuleRules
 				"Core",
 				"UMG",
 				"DDBase",
-				"DDLog"
+				"DDLog",
+				"FMODStudio",
+				"Engine"
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
