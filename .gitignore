@@ -75,3 +75,6 @@ DerivedDataCache/*
 .DS_Store
 Intermediate/
 Binaries/
+
+# Git Related 
+Source/*/Private/git-describe.h

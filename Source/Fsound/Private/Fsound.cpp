@@ -9,6 +9,8 @@
 #include "Fsound.h"
 #include "logging.hpp"
 #include "git-describe.h"
+
+// Unreal relaetd headers 
 #include "GameFramework/Actor.h"
 #include "GameFramework/PlayerController.h"
 #include "Engine/World.h"
@@ -41,7 +43,7 @@ void FFsoundModule::StartupModule()
 
     if (IFMODStudioModule::IsAvailable())
     {
-        FMOD::Studio::System* StudioSystem = IFMODStudioModule::Get().GetStudioSystem(EFMODSystemContext::Runtime);
+        StudioSystem = IFMODStudioModule::Get().GetStudioSystem(EFMODSystemContext::Runtime);
         if (StudioSystem)
         {
             // Use it here
@@ -91,6 +93,25 @@ void FFsoundModule::StartupModule()
 
     // This code will execute after your module is loaded into memory; the exact timing is specified in the .uplugin file per-module
 }
+
+
+void FFsoundModule::Triggers()
+{
+    // This function triggers all events from FMOD
+}
+
+
+void FFsoundModule::States()
+{
+    // This functions keep track all the states relates to sounds 
+}
+
+void FFsoundModule::Update()
+{
+
+}
+
+
 
 void FFsoundModule::ShutdownModule()
 {

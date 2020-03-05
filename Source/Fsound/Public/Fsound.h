@@ -32,17 +32,43 @@
 #include "CoreMinimal.h"
 #include "Modules/ModuleManager.h"
 #include "DDBase.h"
+
+
+// FMOD related headers
+#include "FMODBlueprintStatics.h"
+#include "fmod_studio.hpp"
+#include "fmod.hpp"
+#include "fmod_common.h"
 #include "FMODEvent.h"
+
+
+// BP related headers
+#include "GameFramework/Actor.h"
+// #include "FFsoundModule.generated.h"
 
 class FFsoundModule : public FDDBaseModule
 {
+
 public:
 
 	/** IModuleInterface implementation */
 	virtual void StartupModule() override;
 
+	virtual void ShutdownModule() override;
+
+	virtual void Triggers();
+
+	virtual void States();
+
+	virtual void Update();
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FMOD")
 	UFMODEvent* TestEvent;
 
-	virtual void ShutdownModule() override;
+
+private:
+
+	FMOD::Studio::System* StudioSystem;
+
+
 };
